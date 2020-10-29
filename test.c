@@ -12,7 +12,7 @@ awdb_strnlen(const char *s, size_t maxlen)
 			break;
 	}
 	return (len);
-}
+} 
 static char *
 awdb_strndup(const char *str, size_t n)
 {
@@ -110,22 +110,22 @@ if (entry_data.has_data) {
 
 
 	buf=awdb_strndup((char*)entry_data.utf8_string,entry_data.data_size);
-	printf("区县:\t%s\n",buf);
+	printf("区县:\t%s\n",buf); 
  }
  
-status =AWDB_get_value(&result.entry, &entry_data,"multiAreas","0","lngwgs",  NULL);
+status =AWDB_get_value(&result.entry, &entry_data,"lngwgs",  NULL);
 if (entry_data.has_data) { 
 	buf=awdb_strndup((char*)entry_data.utf8_string,entry_data.data_size);
 	printf("WGS84坐标系经度:\t%s\n",buf);
  }
 
-status =AWDB_get_value(&result.entry, &entry_data,"multiAreas","0","latwgs",  NULL);
+status =AWDB_get_value(&result.entry, &entry_data,"latwgs",  NULL);
 if (entry_data.has_data) { 
 	buf=awdb_strndup((char*)entry_data.utf8_string,entry_data.data_size);
 	printf("WGS84坐标系纬度:\t%s\n",buf);
  }
 
-status =AWDB_get_value(&result.entry, &entry_data,"multiAreas","0","radius",  NULL);
+status =AWDB_get_value(&result.entry, &entry_data,"radius",  NULL);
 if (entry_data.has_data) { 
 	buf=awdb_strndup((char*)entry_data.utf8_string,entry_data.data_size);
 	printf("定位半径:\t%s\n",buf);
